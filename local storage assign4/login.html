@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="container">
+        <h1>Login</h1>
+        <label>Email</label>
+        <input id="email" type="text" placeholder="Enter Email" />
+        <label>Password</label>
+        <input id="password" type="password" placeholder="Password" />
+        <input id="submit" type="submit" />
+    </form>
+</body>
+
+</html>
+<script>
+
+   var signupdatalist =  JSON.parse(localStorage.getItem("signupdatalist"))
+
+
+   var form = document.querySelector("#container")
+   form.addEventListener("submit", myfunction)
+
+    function myfunction() {
+        event.preventDefault()
+
+        var data = {
+            emailname: container.email.value,
+            password: container.password.value
+        }
+         
+         if(signupdatalist == null )
+         {
+             alert("please create an account")
+         }
+         else if(signupdatalist.emailname == data.emailname && signupdatalist.password == data.password)
+         {
+             alert("login successful")
+             localStorage.setItem("signindatalist", JSON.stringify(signupdatalist))
+         }
+         else
+         {
+             alert("wrong credentials")
+         }
+      
+
+       
+
+     
+
+    }
+</script>
